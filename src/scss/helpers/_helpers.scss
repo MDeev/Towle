@@ -1,0 +1,58 @@
+
+html, body{
+	box-sizing: border-box;
+}
+
+body{
+	position: relative;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+	outline: 0;
+}
+
+ul{
+	padding: 0;
+	margin: 0;
+	li{
+		list-style: none;
+	}
+}
+
+%block {
+	display: block;
+}
+
+%inline {
+	display: inline-block;
+}
+
+
+::selection{
+	color: map-get($color, blue3);
+	background-color: map-get($color, white);
+}
+
+
+%read-more{
+	font-size: 15px;
+	padding: 3px 5px;
+	color: map-get($color, dark2);
+	transition: all .3s ease-in-out;
+	overflow: hidden;
+
+	&:hover{ color: map-get($color, blue3); }
+
+	&:after{
+		font-family: "FontAwesome";
+		content: '\f0da';
+		margin-left: 5px;
+		transition: all .3s ease-in-out;
+	}
+	&:hover:after{
+		margin-left: 10px;
+		color: map-get($color, blue3); 
+	}
+}

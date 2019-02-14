@@ -1,0 +1,55 @@
+.our-achivements{
+	@include pt(80);
+	@include pb(80);
+	@include colors(white);
+	background-image: url('../img/bg-02.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	
+	&:before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-image: $gradient2;
+		opacity: .9;
+	}
+
+	.our-achivement{
+		.achivement{
+			h2{
+				@include fontSize(55);
+				@include font($bold);
+				@include mb(-5);
+				text-transform: uppercase;
+				@media #{$sm} { font-size: 40px; }
+			}
+			p{
+				@include fontSize(18);
+				@include font($light);
+				@include colors(gray2);
+				@include mb(20);
+				@media #{$sm} { font-size: 14px; }
+			}
+			.achivement-info{
+				h4{
+					@include fontSize(45);
+					@include font($bold);
+					@include mb(-10);
+				}
+				span{
+					@include fontSize(13);
+					@include font($light);
+					@include colors(gray2);
+					@include ml(5);
+
+					@media #{$sm} { display: block; margin-bottom: 15px; margin-top: 5px; }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+.latest-news{
+	@include pt(80);
+	@include pb(80);
+	@include colors(dark2, gray1);
+
+	h2{
+		@include font($bold);
+		@include fontSize(40);
+		@include mb(40);
+		text-transform: uppercase;
+
+		@media #{$sm} { text-align: center; } 
+
+		@media #{$md} { text-align: center; } 
+
+		@media #{$lg} { text-align: left; } 
+	}
+
+	.news{
+		@include colors(dark2, white);
+		border-radius: 5px;
+		@include mb(25);
+		@include shadow;
+		@include transition;
+		overflow: hidden;
+		cursor: pointer;
+
+		@media #{$sm} { margin-right: 15px; margin-left: 15px; }
+
+		.news-head{
+			position: relative;
+			img{ width: 100%; }
+			span{
+				position: absolute;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 20px;
+				background-image: $gradient2;
+				@include fontSize(11);
+				@include colors(white);
+				@include p(2px 7px);
+
+				@media #{$sm} { font-size: 14px; }
+			}
+		}
+
+		.news-body{
+			@include p(15px 20px);
+
+			p{ @include fontSize(14); }
+			.news-link { 
+				text-align: right;
+				a{
+					@extend %read-more;
+					@include colors(blue2);
+				}
+			}
+		}
+
+		&:hover{
+			@include shadow(5px, 5px, 10px, #333, .15);
+		}
+	}
+}

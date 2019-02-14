@@ -1,0 +1,39 @@
+
+// Importing fonts
+$light: 'Roboto-Light';
+$normal: 'Roboto-Regular';
+$bold: 'Roboto-Bold';
+
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto-Bold';
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+$color: (
+	blue1: #1B3BD8,
+	blue2: #176CE0,
+	blue3: #0B92E7,
+	blue4: #0BB6EB,
+	blue5: #00E0F2,
+	black: #000,
+	dark1: #333,
+	dark2: #222,
+	white: #FFF,
+	gray1: #F1F1F1,
+	gray2: #EEE,
+	gray3: #ccc
+);
+
+// Gradient Color
+$gradient : linear-gradient(to right, map-get($color, blue1), map-get($color, blue2), map-get($color, blue3), map-get($color, blue4), map-get($color, blue5));
+$gradient2 : linear-gradient(to right, map-get($color, blue1), map-get($color, blue2), map-get($color, blue3), map-get($color, blue4));

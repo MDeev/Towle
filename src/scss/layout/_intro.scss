@@ -1,0 +1,118 @@
+
+.intro{	
+	.row{
+		.col-md-4{
+			@include colors(white); 
+			@include mb(20);
+			@include transition(.4s);
+			cursor: pointer;
+
+			.intro-content{
+				text-align: center;
+
+				span{
+					@include fontSize(70);
+					@extend %block;
+					@include mb(5);
+				}
+				h4{
+					@include font($bold);
+					@include fontSize;
+					@include mb(10);
+					text-transform: uppercase;
+				}
+				p{
+					@include fontSize(14);
+					@include mb(25);
+				}
+				ul{
+					text-align: left;
+					@include mb(20);
+					@include transition;
+					opacity: 0;
+
+					li{
+						@extend %block;
+						@include p(3px 5px);
+						@include mb(2);
+						overflow: hidden;
+						a{
+							@include fontSize(14);
+
+							&:before{
+								font-family: "FontAwesome";
+								content: '\f0a9';
+								@include mr(5);
+							}
+							&:hover{
+								@include pl(5);
+								@include colors(blue2);
+							}
+							&:hover:before{
+								@include pl(10);
+								@include colors(blue2);
+							}
+						}
+					}
+				}
+				& > a{
+					@extend %read-more;
+					opacity: 0;
+				}
+			}
+
+			&:hover{ 
+				@include colors(blue3, white);
+				@include shadow;
+
+				.intro-content{
+					h4{ @include colors(dark2); }
+					span{ animation: rotation 1s 1; }
+					ul, & > a{ 
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$sm} {
+		margin-right: 50px;
+		margin-left: 50px;
+		.col-md-4{
+			padding: 20px 30px;
+			background-color: map-get($color, white);
+			color:  map-get($color, blue3) !important;
+			.intro-content{
+				h4{ color: map-get($color, dark2); }
+				ul, & > a{ 
+					opacity: 1 !important;
+				}
+			}
+		}
+	} 
+
+	@media #{$md} {
+		margin-right: 5px;
+		margin-left: 5px;
+		.row{ 
+			border-top: 1px solid map-get($color, white);
+			.intro-content{ padding: 10px 15px; }
+		}
+	} 
+
+	@media #{$lg} {
+		margin-right: 100px;
+		margin-left: 100px;
+		.row{ 
+			border-top: 1px solid map-get($color, white);
+			.intro-content{ padding: 20px 30px; }
+		}
+	} 
+}
+
+
+@keyframes rotation {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

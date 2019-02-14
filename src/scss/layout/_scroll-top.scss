@@ -1,0 +1,26 @@
+.scroll-top{
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+
+	span{
+		@extend %block;
+		width: 135%;
+		@include fontSize(22);
+		@include p(7px 10px);
+		@include colors(white);
+		@include transition;
+		background-image: $gradient;
+		background-repeat: no-repeat;
+		background-position-x: 0px;
+
+		&:hover{
+			background-position-x: -10px;
+		}
+	}
+
+
+}

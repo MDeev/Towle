@@ -1,0 +1,114 @@
+.our-products{
+	@include pt(80);
+	@include pb(80);
+	@include colors(null, gray1);
+
+	h3, .product-list{
+		text-transform: uppercase;
+		@include mb(30);
+	}
+
+	h3{
+		@include font($bold);
+		@media #{$sm} { font-size: 31px; text-align: center; } 
+
+		@media #{$md} { font-size: 20px;  text-align: center; } 
+
+		@media #{$lg} { font-size: 25px;  text-align: left; } 
+
+		@media #{$xlg} { font-size: 31px; } 
+	}
+
+	.product-list{
+		
+		@media #{$sm} { text-align: center; } 
+
+		@media #{$md} { text-align: center; } 
+
+		@media #{$lg} { text-align: right; } 
+
+		.list{
+			@extend %inline;
+			@include fontSize(12);
+			@include p(5px 15px);
+			@include mr(2);
+			@include ml(2);
+			@include mb(5);
+			@include colors(blue3, white);
+			@include transition;
+			border-radius: 25px;
+			cursor: pointer;
+
+			&:hover{
+				@include colors(white, blue2);
+			}
+
+			&.active{
+				@include colors(white);
+				background-image: $gradient2;
+			}
+		}
+	}
+
+	.product{
+		@include mb(25);
+		
+		img{ width: 100%; }
+		.product-img{
+				@include shadow(0, 0, 20px, #CCC, .25);
+				@include mb(10);
+				@include transition;
+				overflow: hidden;
+				position: relative;
+				cursor: pointer;
+
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: $gradient2;
+				opacity: 0;
+				@include transition;
+			}
+			&:hover:before{ opacity: .85; }
+			&:hover .product-buttons{ top: 50%; }
+
+			.product-buttons{
+				@extend %block;
+				position: absolute;
+				top: -15%;
+				transform: translateY(-50%);
+				text-align: center;
+				width: 100%;
+				@include transition;
+
+				.buy, .share{
+					@include colors(blue2, white);
+					@include fontSize(15);
+					@include transition;
+					border-radius: 20px;
+					&:hover{
+						@include colors(white, blue1);
+					}
+				}
+				.buy{ @include mr(5); @include p(5px 20px); }
+				.share{ @include p(5px 10px); }
+			}
+		}
+
+		h5{
+			@include mb(0);
+			@include font($bold);
+			@include fontSize(16);
+		}
+
+		& > span{
+			@include fontSize(14);
+			@include colors(dark2);
+			opacity: .6;
+		}
+	}
+}
